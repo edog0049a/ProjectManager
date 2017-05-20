@@ -55,6 +55,7 @@ namespace ProjectManager.Controllers
         //
         // GET: /Account/Login
         [AllowAnonymous]
+      
         public ActionResult Login(string returnUrl)
         {
         
@@ -137,7 +138,7 @@ namespace ProjectManager.Controllers
 
         //
         // GET: /Account/Register
-       [Allow ]
+        
         public ActionResult Register()
         {
             return View();
