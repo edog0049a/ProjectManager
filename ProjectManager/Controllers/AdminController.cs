@@ -19,6 +19,7 @@ namespace ProjectManager.Controllers
             {
                 return View(context.Users.ToList());
             }
+          
             return View(context.Users.ToList());
         }
     }

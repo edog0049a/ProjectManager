@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
 namespace ProjectManager.Models
 {
-    class Address
+    public class AdminViewModels
     {
-        public int MyProperty { get; set; }
     }
 }
