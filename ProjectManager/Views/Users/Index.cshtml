@@ -1,0 +1,73 @@
+﻿@model  List<ProjectManager.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Users";
+}
+
+<h2>Users</h2>
+
+<p>
+    @Html.ActionLink("Add New User", "Add")
+</p>
+<table class="table">
+    <tr class="panel-heading panel-title">
+        <th>
+            User
+        </th>
+        <th>
+            First Name
+        </th>
+        
+        <th>
+           Middle Intial
+        </th>
+        <th>
+           Last Name
+        </th>
+        <th>
+            Roles
+        </th>
+    </tr>
+
+    @foreach (var user in Model)
+    {
+    
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => user.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => user.UserProfile.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => user.UserProfile.MiddleIntial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => user.UserProfile.LastName)
+            </td>
+            <td>
+                @foreach (var role in user.Roles)
+                 {
+                     <div>
+                                 @Html.Raw(user.GetRoleName(role.RoleId))
+                              
+                         <a href="@Url.Action("RemoveRole", new { Id = user.Id, roleId =role.RoleId})">
+                             <span class="glyphicon glyphicon-remove"></span>
+                         </a>
+                   </div>
+                 }
+                <div>
+                    <a href="@Url.Action("AddRole", new { Id = user.Id})">
+                        Add Role<span class="glyphicon glyphicon-plus"></span> 
+                    </a>
+                </div>
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = user.Id}) |
+                @Html.ActionLink("Details", "Details", new { id = user.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = user.Id })
+            </td>
+        </tr>
+    }
+
+</table>
