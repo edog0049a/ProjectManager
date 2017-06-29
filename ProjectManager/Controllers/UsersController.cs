@@ -28,6 +28,7 @@ namespace ProjectManager.Controllers
 
         public ActionResult RemoveRole(string Id,string roleId)
         {
+           
             var Result =_userManger.RemoveFromRole(Id,_roleManager.FindById(roleId).Name);
             return  View();
         }

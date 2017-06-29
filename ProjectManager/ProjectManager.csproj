@@ -249,6 +249,7 @@
     <Content Include="Views\Jobs\Index.cshtml" />
     <Content Include="Views\Users\RemoveRole.cshtml" />
     <Content Include="Views\Users\AddRole.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
